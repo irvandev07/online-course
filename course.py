@@ -107,7 +107,6 @@ def get_users():
 	decode_var = request.headers.get('Authorization')
 	allow = author_user(decode_var)[0]
 	user = User.query.filter_by(username=allow).first()
-	# return str(user)
 	if not user:
 		return {
 			'message' : 'Please check your login details and try again.'
@@ -449,8 +448,8 @@ def create_course():
 			
 		# return str(a[-1].id) [-1] untuk mengambil id terakhir
 
-		db.session.add(cou)
-		db.session.commit()
+		# db.session.add(cou)
+		# db.session.commit()
 		return {
 			'message' : 'success'
 			# 'id': cou.public_id, 
